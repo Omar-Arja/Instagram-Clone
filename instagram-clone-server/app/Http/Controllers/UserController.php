@@ -67,7 +67,7 @@ class UserController extends Controller
         $users = User::where('username', 'LIKE', "%{$username}%")->where('id', '!=', $current_user->id)->get();
 
         foreach ($users as $user){
-            $user->is_following = $user->followers->contains($user->id);
+            $user->is_following = $current_user->following->contains($user->id);
         }
 
         return response()->json([
