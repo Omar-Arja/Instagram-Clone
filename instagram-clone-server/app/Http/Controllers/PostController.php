@@ -50,6 +50,10 @@ class PostController extends Controller
             $post->username = $post->user->username;
         }
 
+        foreach ($posts as $post){
+            $post->total_likes = $post->likes->count();
+        }
+
         return response()->json([
             'status' => 'success',
             'posts' => $posts,
