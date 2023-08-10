@@ -39,8 +39,7 @@ const CreatePost = () => {
         formData.append("image", fileInput);
 
         try {
-            const response = await axios.post(
-                "http://127.0.0.1:8000/api/posts/create",
+            const response = await axios.post("http://127.0.0.1:8000/api/posts/create",
                 formData,{headers: {Authorization: localStorage.getItem('headers')}});
 
             console.log(response.data);
