@@ -13,6 +13,10 @@ class UserController extends Controller
         $user = Auth::user();
         $posts = Post::where('user_id', $user->id)-> orderBy('created_at', 'desc')-> get();
 
+        foreach ($posts as $post){
+            $post->is_liked = $post->likes->contains($user->id);
+        }
+
         $followers_count = $user->followers->count();
         $following_count = $user->following->count();
 
@@ -38,6 +42,11 @@ class UserController extends Controller
 
         if ($is_following){
             $posts = $userProfile->posts()->orderBy('created_at', 'desc')->get();
+            
+            foreach ($posts as $post){
+                $post->is_liked = $post->likes->contains($user->id);
+            }
+
             return response()->json([
                 'status' => 'success',
                 'user' => $userProfile,
