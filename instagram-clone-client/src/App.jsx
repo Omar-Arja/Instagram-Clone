@@ -5,6 +5,7 @@ import SignUp from './pages/Authentication/Register';
 import SignIn from './pages/Authentication/Log-in';
 import PostFeed from './components/post-feed';
 import Search from './components/search';
+import Sidebar from './components/sidebar';
 
 function App() {
 
@@ -15,7 +16,7 @@ function App() {
     <Routes>
       <Route path="/signup" element={<SignUp />} />
       <Route path="/signin" element={<SignIn setUser={setUser}/>} />
-      <Route path='/' element={<Search />} />
+      <Route path='/' element={<Sidebar />} />
     </Routes>
     </BrowserRouter>
   );
