@@ -24,7 +24,7 @@ class PostController extends Controller
         $image = $request->image;
         $image_name = time().'.'.$request->image->extension();  
         $image->move(public_path('/images'), $image_name);
-        $image_url = '/ecommerce-backend/public/images/'.$image_name;
+        $image_url = '/instagram-clone-server/public/images/'.$image_name;
         $post->image_url = $image_url;
         
         $post->caption = $request->caption;
