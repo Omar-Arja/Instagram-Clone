@@ -46,6 +46,10 @@ class PostController extends Controller
             $post->is_liked = $post->likes->contains($user->id);
         }
 
+        foreach ($posts as $post){
+            $post->username = $post->user->username;
+        }
+
         return response()->json([
             'status' => 'success',
             'posts' => $posts,
