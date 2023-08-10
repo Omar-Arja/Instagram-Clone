@@ -1,5 +1,4 @@
 import PostFeed from "../../components/post-feed"
-import Search from "../../components/search"
 import Sidebar from "../../components/sidebar"
 import "./style.css"
 
