@@ -21,7 +21,7 @@ const PostCard = ({ id, user_id, username, image_url, is_liked, total_likes, cap
        <div className="posts-container">
         <div className="post-card">
             <div className="post-card-header"> {username} </div>
-            <div className="post-card-pic"> <img src={image_url} alt="post image" /> </div>
+            <div className="post-card-pic"> <img src={image_url} alt="post " /> </div>
             <div className="post-card-likes">
                 <svg onClick={handleLikeChange} xmlns="http://www.w3.org/2000/svg" width="20" height="20" cursor={'pointer'} viewBox="0 0 25 25" fill="none">
                     <mask id="mask0_554_16" maskUnits="userSpaceOnUse" x="0" y="0" width="25" height="25">
