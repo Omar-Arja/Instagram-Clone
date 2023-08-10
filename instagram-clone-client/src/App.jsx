@@ -1,8 +1,8 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import React, { useState } from 'react';
-import SignUp from './components/Authentication/Register';
-import SignIn from './components/Authentication/Log-in';
+import SignUp from './pages/Authentication/Register';
+import SignIn from './pages/Authentication/Log-in';
 
 function App() {
 
