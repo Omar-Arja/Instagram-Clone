@@ -4,12 +4,16 @@ import React, { useState } from "react"
 const PostCard = ({ id, user_id, username, image_url, is_liked, total_likes, caption }) => {
 
     const [is_Liked, setIs_liked] = useState(is_liked);
+    const [total_Likes, setTotal_likes] = useState(total_likes);
+
+
     const handleLikeChange = () => {
         axios.post('http://127.0.0.1:8000/api/posts/like/' + id, {},
         { headers: {Authorization: localStorage.getItem('headers')} })
         
         .then((res) => {
             setIs_liked(!is_Liked);
+            setTotal_likes(total_Likes + (is_Liked ? -1 : 1));
             console.log(res.data);
         }).catch((err) => {
             console.log(err);
@@ -18,7 +22,6 @@ const PostCard = ({ id, user_id, username, image_url, is_liked, total_likes, cap
 
 
     return (
-       <div className="posts-container">
         <div className="post-card">
             <div className="post-card-header"> {username} </div>
             <div className="post-card-pic"> <img src={image_url} alt="post " /> </div>
@@ -32,12 +35,11 @@ const PostCard = ({ id, user_id, username, image_url, is_liked, total_likes, cap
                     </g>
                 </svg>
                 <div className="number-of-likes">
-                    {total_likes} Likes
+                    {total_Likes} Likes
                 </div>
             </div>
             <div className="post-card-caption">{caption}</div>
         </div>
-       </div>
     )
 }
 
