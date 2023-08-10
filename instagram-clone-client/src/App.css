@@ -66,3 +66,43 @@ button {
 .post-card-caption {
   margin-top: 10px;
 }
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  gap: 10px;
+}
+
+.user-profile-name {
+  font-weight: bold;
+  display: block;
+  margin-top: 8px;
+  font-size: 17px;
+}
+
+.follow-unfollow-btn {
+  display: flex;
+  align-items: center;
+}
+
+.follow-btn,
+.unfollow-btn {
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.follow-btn {
+  background-color: #00aaff;
+  color: white;
+  border: none;
+}
+
+.unfollow-btn {
+  background-color: #ff5555;
+  color: white;
+  border: none;
+}

@@ -1,4 +1,5 @@
-
+import React, { useState } from "react";
+import axios from "axios";
 
 const SearchResults = ({ id, first_name, last_name, username, is_following }) => {
     const [is_Following, setIs_Following] = useState(is_following);
@@ -23,7 +24,7 @@ const SearchResults = ({ id, first_name, last_name, username, is_following }) =>
 
   return (
     <div className="user-profile">
-        <div className="user-profile-name">{username} <br/>{first_name} {last_name}</div>
+        <div>{username} <br/><span className="user-profile-name">{first_name} {last_name}</span></div>
         <div className="follow/unfollow-btn">
             {is_Following ? <button className="unfollow-btn" onClick={handleUnfollow}>Unfollow</button> : <button className="follow-btn" onClick={handleFollow}>Follow</button>}
         </div>

@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import SignUp from './pages/Authentication/Register';
 import SignIn from './pages/Authentication/Log-in';
 import PostFeed from './components/post-feed';
+import Search from './components/search';
 
 function App() {
 
@@ -14,7 +15,7 @@ function App() {
     <Routes>
       <Route path="/signup" element={<SignUp />} />
       <Route path="/signin" element={<SignIn setUser={setUser}/>} />
-      <Route path='/' element={<PostFeed />} />
+      <Route path='/' element={<Search />} />
     </Routes>
     </BrowserRouter>
   );
